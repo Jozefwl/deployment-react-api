@@ -1,0 +1,14 @@
+[Unit]
+Description=API for Deployment
+After=network.target
+
+[Service]
+Type=simple
+User=root
+Group=root
+ExecStart=/usr/bin/python3 /root/apiForDeploy.py
+WorkingDirectory=/root
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
